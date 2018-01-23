@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="150" height="150"></canvas>
+<script>
+    function draw() {
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            // createPattern(image, type) 该方法接受两个参数。Image 可以是一个 Image 对象的引用，或者另一个 canvas 对象。
+            // Type 必须是下面的字符串值之一：repeat，repeat-x，repeat-y 和 no-repeat。
+
+            // 创建新 image 对象，用作图案
+            var img = new Image();
+            img.src = 'images/clock.jpg';
+            img.onload = function () {
+                // 创建图案
+                var ptrn = ctx.createPattern(img, 'repeat');
+                ctx.fillStyle = ptrn;
+                ctx.fillRect(0, 0, 150, 150);
+            }
+        }
+    }
+</script>
+</body>
+</html>

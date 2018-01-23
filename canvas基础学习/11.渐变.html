@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="150" height="150"></canvas>
+<script>
+    function draw() {
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            // createLinearGradient(x1, y1, x2, y2)  createLinearGradient 方法接受 4 个参数，表示渐变的起点 (x1,y1) 与终点 (x2,y2)。
+            // createRadialGradient(x1, y1, r1, x2, y2, r2)  createRadialGradient 方法接受 6 个参数，前三个定义一个以 (x1,y1) 为原点，半径为 r1 的圆，后三个参数则定义另一个以 (x2,y2) 为原点，半径为 r2 的圆
+            var lineargradient = ctx.createLinearGradient(0,0,150,150);
+            var radialgradient = ctx.createRadialGradient(75,75,0,75,75,100);
+
+            // canvasGradient 对象后，我们就可以用 addColorStop 方法给它上色了
+            // gradient.addColorStop(position, color)  addColorStop 方法接受 2 个参数，position 参数必须是一个 0.0 与 1.0 之间的数值，表示渐变中颜色所在的相对位置。
+            // 例如，0.5 表示颜色会出现在正中间。color 参数必须是一个有效的 CSS 颜色值（如 #FFF， rgba(0,0,0,1)，等等）。
+
+            lineargradient.addColorStop(0, '#00ABEB');
+            lineargradient.addColorStop(0.5, '#fff');
+            lineargradient.addColorStop(0.5, '#26C000');
+            lineargradient.addColorStop(1, '#fff');
+
+            radialgradient.addColorStop(0.5, '#fff');
+            radialgradient.addColorStop(0.6, '#000');
+
+            // 将渐变对象赋值给 fillStyle strokeStyle
+            ctx.fillStyle = lineargradient;
+            ctx.strokeStyle = radialgradient;
+
+            // draw shapes
+            ctx.fillRect(10,10,130,130);
+            ctx.strokeRect(50,50,100,100);
+        }
+    }
+</script>
+</body>
+</html>

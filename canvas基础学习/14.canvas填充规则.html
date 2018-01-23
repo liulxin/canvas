@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="150" height="150"></canvas>
+<script>
+    function draw() {
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            // 当我们用到 fill（或者 clip和isPointinPath ）你可以选择一个填充规则
+            // "nonzero": non-zero winding rule, 默认值.
+            // "evenodd":  even-odd winding rule.
+
+            ctx.beginPath();
+            ctx.arc(50, 50, 30, 0, Math.PI*2, true);
+            ctx.arc(50, 50, 15, 0, Math.PI*2, true);
+            ctx.fill("evenodd");
+
+        }
+    }
+</script>
+</body>
+</html>

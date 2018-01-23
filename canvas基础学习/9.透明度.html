@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+<script>
+    function draw() {
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            // globalAlpha = transparencyValue  这个属性影响到 canvas 里所有图形的透明度，有效的值范围是 0.0 （完全透明）到 1.0（完全不透明），默认是 1.0。
+            // globalAlpha 属性在需要绘制大量拥有相同透明度的图形时候相当高效
+
+            // 因为 strokeStyle 和 fillStyle 属性接受符合 CSS 3 规范的颜色值，那我们可以用下面的写法来设置具有透明度的颜色。
+            // 指定透明颜色，用于描边和填充样式
+            ctx.strokeStyle = "rgba(255,0,0,0.5)";
+            ctx.fillStyle = "rgba(255,0,0,0.5)";
+
+            // globalAlpha 示例
+            // 画背景
+            ctx.fillStyle = '#FD0';
+            ctx.fillRect(0,0,75,75);
+            ctx.fillStyle = '#6C0';
+            ctx.fillRect(75,0,75,75);
+            ctx.fillStyle = '#09F';
+            ctx.fillRect(0,75,75,75);
+            ctx.fillStyle = '#F30';
+            ctx.fillRect(75,75,75,75);
+            ctx.fillStyle = '#FFF';
+
+            // 设置透明度值
+            // ctx.globalAlpha = 0.2;
+
+            // 画半透明圆
+            for (var i=0;i<7;i++){
+                ctx.beginPath();
+                ctx.arc(75,75,10+10*i,0,Math.PI*2,true);
+                ctx.fill();
+            }
+            ctx.clearRect(0,0,canvas.offsetWidth,canvas.offsetHeight); // 清除画布后设置的全局透明度仍然存在
+
+            // rgba() 示例
+            // 画背景
+            ctx.fillStyle = 'rgb(255,221,0)';
+            ctx.fillRect(0,0,150,37.5);
+            ctx.fillStyle = 'rgb(102,204,0)';
+            ctx.fillRect(0,37.5,150,37.5);
+            ctx.fillStyle = 'rgb(0,153,255)';
+            ctx.fillRect(0,75,150,37.5);
+            ctx.fillStyle = 'rgb(255,51,0)';
+            ctx.fillRect(0,112.5,150,37.5);
+
+            // 画半透明矩形
+            for (var i=0;i<10;i++){
+                ctx.fillStyle = 'rgba(255,255,255,'+(i+1)/10+')';
+                for (var j=0;j<4;j++){
+                    ctx.fillRect(5+i*14,5+j*37.5,14,27.5)
+                }
+            }
+
+        }
+    }
+</script>
+</html>
