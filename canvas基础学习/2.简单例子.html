@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+<script>
+    function draw() {
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            // fillRect(x, y, width, height)
+            // strokeRect(x, y, width, height)
+            // clearRect(x, y, width, height)
+            // x与y指定了在canvas画布上所绘制的矩形的左上角（相对于原点）的坐标。width和height设置矩形的尺寸
+
+            ctx.fillStyle = "rgb(200,0,0)";
+            ctx.fillRect (10, 10, 55, 50);
+
+            ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+            ctx.fillRect (30, 30, 55, 50);
+
+            ctx.fillRect(25,25,100,100);
+            ctx.clearRect(45,45,60,60);
+            ctx.strokeRect(50,50,50,50);
+        }
+    }
+</script>
+</html>

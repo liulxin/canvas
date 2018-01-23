@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #stockGraph {
+            background: red;
+        }
+
+        #clock {
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+<!--由于某些较老的浏览器（尤其是IE9之前的IE浏览器）或者文本浏览器不支持HTML元素"canvas"，在这些浏览器上你应该总是能展示替代内容。-->
+<!--<canvas> 标签只有两个属性—— width和height-->
+<!--canvas会初始化宽度为300像素和高度为150像素-->
+<!--如果你绘制出来的图像是扭曲的, 尝试用width和height属性为<canvas>明确规定宽高，而不是使用CSS-->
+
+<canvas id="stockGraph" width="150" height="150">
+    这是canvas替换内容
+</canvas>
+
+<canvas id="clock" width="360" height="360">
+    <img src="images/clock.jpg" width="360" height="360" alt=""/>
+</canvas>
+</body>
+<script>
+    // canvas 元素公开了一个或多个渲染上下文
+    // <canvas> 元素有一个叫做 getContext() 的方法，这个方法是用来获得渲染上下文和它的绘画功能。getContext()只有一个参数，上下文的格式
+    // 对于2D图像而言，你可以使用 CanvasRenderingContext2D。
+    // var canvas = document.getElementById('stockGraph');
+    // var ctx = canvas.getContext('2d');
+
+    // 替换内容是用于在不支持 <canvas> 标签的浏览器中展示的。通过简单的测试getContext()方法的存在，可以检查编程支持性
+    var canvas = document.getElementById('stockGraph');
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        // drawing code here
+
+    } else {
+        // canvas-unsupported code here
+        alert('您的浏览器不支持canvas标签')
+    }
+
+
+</script>
+</html>
