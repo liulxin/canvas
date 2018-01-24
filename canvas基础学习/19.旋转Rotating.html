@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body onload="draw()">
+<canvas width="300" height="300" id="canvas"></canvas>
+<script>
+    function draw() {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        // rotate(angle)
+        // rotate 方法，它用于以原点为中心旋转 canvas
+        // 只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。
+        // 旋转的中心点始终是 canvas 的原点，如果要改变它，我们需要用到 translate 方法
+        // ctx.translate(100,100);
+        // ctx.save();
+        // ctx.rotate(1);
+        // ctx.fillRect(0,0,100,100);
+        // ctx.restore();
+        // ctx.fillStyle = '#090';
+        // ctx.rotate(2);
+        // ctx.fillRect(0,0,50,50);
+
+        ctx.translate(75,75);
+
+        // for (var i=1;i<6;i++){ // Loop through rings (from inside to out) 多少圈
+        //     ctx.save();
+        //     ctx.fillStyle = 'rgb('+(51*i)+','+(255-51*i)+',255)';
+        //
+        //     for (var j=0;j<i*6;j++){ // draw individual dots  每圈的个数
+        //         ctx.rotate(Math.PI*2/(i*6));
+        //         ctx.beginPath();
+        //         ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
+        //         ctx.fill();
+        //     }
+        //     ctx.restore();
+        // }
+        var i = 0;
+       var draw =  setInterval(function () {
+            i++;
+            if(i>=6){
+                ctx.clearRect(-75,-75,canvas.offsetWidth,canvas.offsetHeight);
+                i=1;
+            }
+            ctx.save();
+            ctx.fillStyle = 'rgb('+(51*i)+','+(255-51*i)+',255)';
+
+            for (var j=0;j<i*6;j++){ // draw individual dots  每圈的个数
+                ctx.rotate(Math.PI*2/(i*6));
+                ctx.beginPath();
+                ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
+                ctx.fill();
+            }
+            ctx.restore();
+        },200);
+
+
+    }
+
+</script>
+</body>
+</html>
