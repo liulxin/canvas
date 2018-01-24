@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44443cbd-8e41-419b-ad18-17a92361d8fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/canvas基础学习/15.绘制文本.html" afterPath="$PROJECT_DIR$/canvas基础学习/15.绘制文本.html" />
-    </list>
+    <list default="true" id="44443cbd-8e41-419b-ad18-17a92361d8fc" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -23,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="21.剪裁路径Clipping paths.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/canvas基础学习/21.剪裁路径Clipping paths.html">
+      <file leaf-file-name="23-1.高级动画.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/canvas基础学习/23-1.高级动画.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+            <state relative-caret-position="300">
+              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -69,6 +66,10 @@
         <option value="$PROJECT_DIR$/canvas基础学习/19.旋转Rotating.html" />
         <option value="$PROJECT_DIR$/canvas基础学习/20.缩放Scaling.html" />
         <option value="$PROJECT_DIR$/canvas基础学习/21.剪裁路径Clipping paths.html" />
+        <option value="$PROJECT_DIR$/canvas基础学习/22.动画.html" />
+        <option value="$PROJECT_DIR$/canvas基础学习/22.2时钟动画.html" />
+        <option value="$PROJECT_DIR$/canvas基础学习/22.3循环全景照片.html" />
+        <option value="$PROJECT_DIR$/canvas基础学习/23-1.高级动画.html" />
       </list>
     </option>
   </component>
@@ -160,12 +161,12 @@
       <option name="presentableId" value="Default" />
       <updated>1516676924343</updated>
       <workItem from="1516676950048" duration="3474000" />
-      <workItem from="1516685410683" duration="19266000" />
+      <workItem from="1516685410683" duration="25952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22740000" />
+    <option name="totallyTimeSpent" value="29426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -371,8 +372,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas基础学习/21.剪裁路径Clipping paths.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        <state relative-caret-position="1225">
+          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas基础学习/22.1动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas基础学习/22.2时钟动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas基础学习/22.3循环全景照片.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-375">
+          <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas基础学习/23-1.高级动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
           <folding />
         </state>
       </provider>
