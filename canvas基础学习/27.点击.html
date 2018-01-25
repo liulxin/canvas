@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    // 需启用偏好设置 ：
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(70, 80, 10, 0, 2 * Math.PI, false);
+    ctx.fill();
+    ctx.addHitRegion({id: "circle"});
+
+    canvas.addEventListener("mousemove", function(event){
+        if(event.region) {
+            alert("hit region: " + event.region);
+        }
+    });
+</script>
+</body>
+</html>

@@ -7,17 +7,64 @@
         #canvas{
             border: 1px solid #ccc;
         }
+        #zoom{
+            border: 1px solid #ccc;
+        }
+        #smoothbtn{
+            border: 1px solid #ccc;
 
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
 <canvas id="canvas" width="600" height="300"></canvas>
-
+<canvas id="zoom"></canvas>
+<div>
+    <label for="smoothbtn">
+        <input type="checkbox" name="smoothbtn" checked="checked" id="smoothbtn">
+        Enable image smoothing
+    </label>
+</div>
 <script>
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
 
-    
+    var img = new Image();
+    img.src = 'https://mdn.mozillademos.org/files/5397/rhino.jpg';
+    img.onload = function() {
+        draw(this);
+    };
+
+    function draw(img) {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        img.style.display = 'none';
+        var zoomctx = document.getElementById('zoom').getContext('2d');
+
+        var smoothbtn = document.getElementById('smoothbtn');
+        var toggleSmoothing = function(event) {
+            zoomctx.imageSmoothingEnabled = this.checked;
+            zoomctx.mozImageSmoothingEnabled = this.checked;
+            zoomctx.webkitImageSmoothingEnabled = this.checked;
+            zoomctx.msImageSmoothingEnabled = this.checked;
+        };
+        smoothbtn.addEventListener('change', toggleSmoothing);
+
+        var zoom = function(event) {
+            var x = event.layerX;
+            var y = event.layerY;
+            zoomctx.drawImage(canvas,
+                Math.abs(x - 5),
+                Math.abs(y - 5),
+                10, 10,
+                0, 0,
+                100, 100); // 前四个是切片位置以及大小，后四个 是放置的位置以及大小
+        };
+
+        canvas.addEventListener('mousemove', zoom);
+    }
 
 </script>
 

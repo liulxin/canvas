@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas{
+            border: 1px solid #ccc;
+        }
+        #zoom{
+            border: 1px solid #ccc;
+        }
+        #smoothbtn{
+            border: 1px solid #ccc;
+
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="300"></canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    // HTMLCanvasElement  提供一个toDataURL()方法，此方法在保存图片的时候非常有用。
+    // 它返回一个包含被类型参数规定的图像表现格式的数据链接。返回的图片分辨率是96dpi。
+
+    // canvas.toDataURL('image/png')  默认设定。创建一个PNG图片。
+    // canvas.toDataURL('image/jpeg', quality) 创建一个JPG图片。你可以有选择地提供从0到1的品质量，1表示最好品质，0基本不被辨析但有比较小的文件大小
+    // canvas.toBlob(callback, type, encoderOptions)    创建了一个在画布中的代表图片的Blob对像
+    var img = new Image();
+    img.src = './images/img.png';
+    img.setAttribute('crossOrigin', 'anonymous');
+    img.onload = function() {
+        draw(this);
+    };
+    function draw() {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        img.style.display = 'none';
+        console.log(canvas.toDataURL('images/png'));
+    }
+</script>
+
+</body>
+</html>
