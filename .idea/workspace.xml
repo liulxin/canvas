@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="23-1.高级动画.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/canvas基础学习/23-1.高级动画.html">
+      <file leaf-file-name="25.缩放和反锯齿.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/canvas基础学习/25.缩放和反锯齿.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state relative-caret-position="475">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -70,6 +70,8 @@
         <option value="$PROJECT_DIR$/canvas基础学习/22.2时钟动画.html" />
         <option value="$PROJECT_DIR$/canvas基础学习/22.3循环全景照片.html" />
         <option value="$PROJECT_DIR$/canvas基础学习/23-1.高级动画.html" />
+        <option value="$PROJECT_DIR$/canvas基础学习/24.像素.html" />
+        <option value="$PROJECT_DIR$/canvas基础学习/25.缩放和反锯齿.html" />
       </list>
     </option>
   </component>
@@ -80,9 +82,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="908" />
-    <option name="y" value="24" />
-    <option name="width" value="1139" />
+    <option name="x" value="418" />
+    <option name="y" value="55" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -125,7 +127,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -161,12 +163,12 @@
       <option name="presentableId" value="Default" />
       <updated>1516676924343</updated>
       <workItem from="1516676950048" duration="3474000" />
-      <workItem from="1516685410683" duration="25952000" />
+      <workItem from="1516685410683" duration="35168000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29426000" />
+    <option name="totallyTimeSpent" value="38642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -406,6 +408,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas基础学习/24.像素.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="98" column="33" lean-forward="true" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas基础学习/25.缩放和反锯齿.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
           <folding />
         </state>
       </provider>
