@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Canvas烟花</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas">Canvas is not supported in your browser.</canvas>
+<script type="text/javascript">
+
+    //帧动画
+    window.requestAnimationFrame = (function () {
+        return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            function (callback) {
+                window.setTimeout(callback, 1E3 / 60);
+            }
+    })();
+
+    //
+    var canvas = document.getElementById("canvas"),
+        ctx = canvas.getContext("2d"),
+        cw = window.innerWidth,
+        ch = window.innerHeight,
+        fireworks = [], // 烟花
+        particles = [], // 爆炸粒子集合
+        hue = 120, // 开始色调
+        timerTotal = 80,
+        timerTick = 0;
+
+    // canvas宽高设置
+    canvas.width = cw;
+    canvas.height = ch;
+
+
+    //获取范围内随机数
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    // 计算两点距离
+    function caculateDistance(sx, sy, tx, ty) {
+        var xDistance = sx - tx,
+            yDistance = sy - ty;
+        return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+    }
+
+    // 创建烟花
+    function Firework(sx, sy, tx, ty) {
+        this.x = sx;// 实际坐标
+        this.y = sy;
+        this.sx = sx;//开始坐标
+        this.sy = sy;
+        this.tx = tx;//目标坐标
+        this.ty = ty;
+        this.distanceToTarget = caculateDistance(sx, sy, tx, ty);//计算距离
+        this.distanceTraveled = 0;
+        // 追踪每个烟花经过的坐标，来创建一个跟踪效果,增加坐标数量来创造更多轨迹
+        this.coordinates = [];//坐标
+        this.coordinatesCount = 3;
+        //填充初始坐标集合与当前坐标
+        while (this.coordinatesCount--) {
+            this.coordinates.push([this.x, this.y]);
+        }
+        this.angle = Math.atan2(ty - sy, tx - sx); //  从x轴到指定坐标点(x, y)的角度(以弧度为单位)
+        this.speed = 2; //速度
+        this.acceleration = 1.05; //加速度
+        this.brightness = random(50, 70); // 亮度
+        this.targetRadius = 1;//圆形目标点指示器半径
+    }
+
+    // update firework  更新烟花
+    Firework.prototype.update = function (index) {
+        this.coordinates.pop(); //删除最后一项，返回被删除的项，改变原数组
+        this.coordinates.unshift([this.x, this.y]);// 在数组的开头添加项，返回新数组长度，改变原数组
+
+        //更新目标指示器圆半径
+        if (this.targetRadius < 8) {
+            this.targetRadius += 0.3;
+        } else {
+            this.targetRadius = 1;
+        }
+        this.speed *= this.acceleration;
+        var vx = Math.cos(this.angle) * this.speed,
+            vy = Math.sin(this.angle) * this.speed;
+        this.distanceTraveled = caculateDistance(this.sx, this.sy, this.x + vx, this.y + vy);//更新路径  烟花会随速度飞行多远
+        if (this.distanceTraveled >= this.distanceToTarget) { //到达目标点，开始创建爆炸粒子
+            createParticles(this.tx, this.ty);
+            fireworks.splice(index, 1);//删除某项，返回删除的项，改变原数组 删除烟花,使用索引传递到更新函数来确定删除
+        } else {
+            this.x += vx;
+            this.y += vy;
+        }
+    };
+
+    //绘制烟花以及目标指示器圆
+    Firework.prototype.draw = function () {
+
+        ctx.beginPath();
+        ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+        ctx.lineTo(this.x, this.y);
+        ctx.strokeStyle = 'hsl(' + hue + ',100%,' + this.brightness + '%)';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(this.tx, this.ty, this.targetRadius, 0, Math.PI * 2);
+        ctx.stroke();
+    };
+
+    //爆炸粒子
+    function Particle(x, y) {
+        this.x = x;
+        this.y = y;
+        this.coordinates = []; // 追踪每个爆炸粒子经过的坐标，来创建一个跟踪效果,增加坐标数量来创造更多杰出的轨迹
+        this.coordinatesCount = 5;
+        while (this.coordinatesCount--) {
+            this.coordinates.push([this.x, this.y]);
+        }
+        // 在所有可能的方向,设置一个随机角弧度
+        this.angle = random(0, 2 * Math.PI);
+        this.speed = random(1, 10);
+        this.friction = 0.95;//摩擦会使粒子慢下来
+        this.gravity = 1;
+        this.hue = random(hue - 20, hue + 20);//重力将应用粒子拉下来
+        this.brightness = random(50, 80);//在烟花色度范围内随机取爆炸粒子色度
+        this.alpha = 1;
+        this.decay = random(0.015, 0.03); //设置粒子消失的速度
+    }
+
+    //更新爆炸粒子
+    Particle.prototype.update = function (index) {
+        this.coordinates.pop(); //删除爆炸粒子坐标数组里最后一个坐标
+        this.coordinates.unshift([this.x, this.y]); //当前的坐标添加到爆炸粒子坐标数组的开始
+        //减缓粒子
+        this.speed *= this.friction;
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed + this.gravity;
+        this.alpha -= this.decay;// 粒子消失参数
+        if (this.alpha <= this.decay) {  // 删除粒子,使用索引传递到更新函数来确定删除
+            particles.splice(index, 1);
+        }
+    };
+    // 绘制爆炸粒子
+    Particle.prototype.draw = function () {
+        // 移动到最后一个坐标跟踪设置,然后画一条线到当前的x和y
+        ctx.beginPath();
+        ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+        ctx.lineTo(this.x, this.y);
+        ctx.strokeStyle = 'hsla(' + this.hue + ',100%,' + this.brightness + '%,' + this.alpha + ')';
+        ctx.stroke();
+    };
+
+    //创建爆炸粒子组
+    function createParticles(x, y) {
+        var particleCount = parseInt(random(20, 50)); // 增加粒子数创造更大的爆炸,谨防增加粒子造成canvas与性能影响
+        while (particleCount--) {
+            particles.push(new Particle(x, y));
+        }
+    }
+
+    function loop() {
+        // 这个函数将无限运行requestAnimationFrame
+        requestAnimationFrame(loop);
+        hue += 0.5; // 增加颜度，随着时间的推移得到不同颜色的烟火
+        // 设置复合操作destination-out将使我们能够把画布清理在在一个特定的不透明度,而不是完全抹去它
+        ctx.globalCompositeOperation = 'destination-out';// 在源图像外显示目标图像。只有源图像外的目标图像部分会被显示，源图像是透明的
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // 降低alpha属性来创建更加显著的轨迹（0.5是透明度）
+        ctx.fillRect(0, 0, cw, ch);
+        ctx.globalCompositeOperation = 'lighter';// 显示源图像 + 目标图像。
+        // 循环绘制烟花
+        var i = fireworks.length;
+        while (i--) {
+            fireworks[i].draw();
+            fireworks[i].update(i);
+        }
+        // 循环绘制粒子
+        var i = particles.length;
+        while (i--) {
+            particles[i].draw();
+            particles[i].update(i);
+        }
+        // 当鼠标不点击，自动随机坐标发射烟火
+        if (timerTick >= timerTotal) {
+            // 启动烟花在屏幕中间的底部, 然后设置随机目标坐标, 随机y坐标将范围内的屏幕的上半部分
+            fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
+            timerTick = 0;
+        } else {
+            timerTick++;
+        }
+
+    }
+
+    window.onload = loop;
+</script>
+</body>
+</html>

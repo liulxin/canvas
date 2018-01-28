@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="44443cbd-8e41-419b-ad18-17a92361d8fc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/canvas特效/canvas雪花/index.html" afterPath="$PROJECT_DIR$/canvas特效/canvas雪花/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="338">
+              <caret line="192" column="28" lean-forward="true" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -137,14 +136,7 @@
               <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
               <item name="canvas" type="462c0819:PsiDirectoryNode" />
               <item name="canvas特效" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas烟花" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canvas" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas特效" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas烟花" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="canvas雪花" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -193,12 +185,12 @@
       <updated>1516676924343</updated>
       <workItem from="1516676950048" duration="3474000" />
       <workItem from="1516685410683" duration="40509000" />
-      <workItem from="1517122734786" duration="397000" />
+      <workItem from="1517122734786" duration="4284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56861000" />
+    <option name="totallyTimeSpent" value="60748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -571,39 +563,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canvas特效/canvas雪花/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="49" column="23" lean-forward="false" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="e#902#2060#0" expanded="false" />
-            <element signature="e#2293#2934#0" expanded="false" />
-            <element signature="e#2982#3708#0" expanded="false" />
-            <element signature="e#3749#4592#0" expanded="false" />
-            <element signature="e#4826#4945#0" expanded="false" />
-            <element signature="e#5173#5275#0" expanded="false" />
-            <element signature="e#5497#5604#0" expanded="false" />
-            <element signature="e#5858#6534#0" expanded="false" />
-            <element signature="e#6582#7961#0" expanded="false" />
-            <element signature="e#8002#9129#0" expanded="false" />
-            <element signature="e#9387#9465#0" expanded="false" />
-            <element signature="e#9693#9795#0" expanded="false" />
-            <element signature="e#10017#10121#0" expanded="false" />
-            <element signature="e#10332#11319#0" expanded="false" />
-            <element signature="e#11530#11626#0" expanded="false" />
-            <element signature="e#11840#11981#0" expanded="false" />
-            <element signature="e#12194#12588#0" expanded="false" />
-            <element signature="e#13033#16462#0" expanded="false" />
-            <element signature="e#16518#16578#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -615,10 +579,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/canvas特效/canvas雪花/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="338">
+          <caret line="192" column="28" lean-forward="true" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
           <folding />
         </state>
       </provider>
