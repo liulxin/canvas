@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="44443cbd-8e41-419b-ad18-17a92361d8fc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/canvas特效/canvas烟花/test.html" afterPath="$PROJECT_DIR$/canvas特效/canvas烟花/test.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,18 +22,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="192" column="28" lean-forward="true" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -44,6 +34,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>rand</find>
+      <find>fireworks</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,8 +76,8 @@
         <option value="$PROJECT_DIR$/canvas基础学习/28.性能.html" />
         <option value="$PROJECT_DIR$/canvas特效/canvas烟花/js/index.js" />
         <option value="$PROJECT_DIR$/canvas特效/canvas雪花/index.html" />
-        <option value="$PROJECT_DIR$/canvas特效/canvas烟花/test.html" />
         <option value="$PROJECT_DIR$/canvas特效/canvas雪花/index2.html" />
+        <option value="$PROJECT_DIR$/canvas特效/canvas烟花/test.html" />
       </list>
     </option>
   </component>
@@ -127,24 +118,6 @@
             <path>
               <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
               <item name="canvas" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canvas" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas特效" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canvas" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas特效" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas烟花" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="canvas" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas特效" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas烟花" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,12 +167,12 @@
       <updated>1516676924343</updated>
       <workItem from="1516676950048" duration="3474000" />
       <workItem from="1516685410683" duration="40509000" />
-      <workItem from="1517122734786" duration="5079000" />
+      <workItem from="1517122734786" duration="8826000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61543000" />
+    <option name="totallyTimeSpent" value="65290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -598,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="192" column="28" lean-forward="true" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
+        <state relative-caret-position="-925">
+          <caret line="119" column="6" lean-forward="true" selection-start-line="119" selection-start-column="6" selection-end-line="119" selection-end-column="6" />
           <folding />
         </state>
       </provider>

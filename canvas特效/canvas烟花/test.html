@@ -71,6 +71,7 @@
         this.coordinatesCount = 3;
         //填充初始坐标集合与当前坐标
         while (this.coordinatesCount--) {
+            console.log(this.coordinates);
             this.coordinates.push([this.x, this.y]);
         }
         this.angle = Math.atan2(ty - sy, tx - sx); //  从x轴到指定坐标点(x, y)的角度(以弧度为单位)
@@ -174,23 +175,26 @@
         requestAnimationFrame(loop);
         hue += 0.5; // 增加颜度，随着时间的推移得到不同颜色的烟火
         // 设置复合操作destination-out将使我们能够把画布清理在在一个特定的不透明度,而不是完全抹去它
-        ctx.globalCompositeOperation = 'destination-out';// 在源图像外显示目标图像。只有源图像外的目标图像部分会被显示，源图像是透明的
+        // ctx.globalCompositeOperation = 'destination-out';//在与源不重叠的区域上保留目标。其他部分都变成透明的   在源图像外显示目标图像。只有源图像外的目标图像部分会被显示，源图像是透明的
         ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'; // 降低alpha属性来创建更加显著的轨迹（0.5是透明度）
         ctx.fillRect(0, 0, cw, ch);
         ctx.globalCompositeOperation = 'lighter';// 显示源图像 + 目标图像。
         // 循环绘制烟花
         var i = fireworks.length;
+        console.log(i);
         while (i--) {
             fireworks[i].draw();
             fireworks[i].update(i);
         }
         // 循环绘制粒子
         var i = particles.length;
+        console.log(i+'---particles');
         while (i--) {
             particles[i].draw();
             particles[i].update(i);
         }
         // 当鼠标不点击，自动随机坐标发射烟火
+        // timerTick--0   timerTotal--80
         if (timerTick >= timerTotal) {
             // 启动烟花在屏幕中间的底部, 然后设置随机目标坐标, 随机y坐标将范围内的屏幕的上半部分
             fireworks.push(new Firework(cw / 2, ch, random(0, cw), random(0, ch / 2)));
@@ -201,7 +205,8 @@
 
     }
 
-    window.onload = loop;
+    window.onload = loop; //onload调用loop
+                    // --> 循环调用loop --> 绘制烟花（最初长度为0不绘制） --> 绘制粒子（最初长度为0不绘制） --> （timerTick >= timerTotal）添加烟花 并重置 timerTick=0
 </script>
 </body>
 </html>
