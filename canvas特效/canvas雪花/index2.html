@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: url("images/bg.jpg") no-repeat center;
+            background-size: cover;
+        }
+
+        #canvas {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas">
+    您的浏览器不支持canvas
+</canvas>
+<script>
+    function SNOW(obj) {
+        var rand = function (rMi, rMa) {
+            return ~~((Math.random() * (rMa - rMi + 1)) + rMi);
+        }; // 范围区间整数
+        window.requestAnimFrame = function () {
+            return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (a) {
+                window.setTimeout(a, 1E3 / 60)
+            }
+        }();//帧动画
+        var overGame = function (x, y, w, h,cw,ch) {return (x + w/2 > cw || y + h/2 > ch)};//是否出界
+
+        var self = this;
+
+        var img = new Image();
+        img.src = './images/snow.png';
+
+        self.canvas = document.getElementById('canvas');
+        self.ctx = canvas.getContext('2d');
+        // cw ch
+        self.canvas.width = self.cw = window.innerWidth;
+        self.canvas.height = self.ch = window.innerHeight;
+        //雪花位置以及速度 num r x y vx vy
+        self.num = obj.num;
+        self.snows = [];
+        for (var i = 0; i < self.num; i++) {
+            var width = rand(1, 10);
+            self.snows.push({
+                x: rand(0, self.cw),
+                y: rand(0, self.ch/4),
+                width: width,
+                height: width,
+                cx: rand(-1, 3),
+                cy: rand(1, 3)
+            })
+        }
+        // drawImage(image, x, y, width, height)
+        // 图片加载后，开始执行帧动画清空并渲染
+        img.onload = function () {
+            self.snowLoop = function () {
+                requestAnimationFrame(snowLoop);
+                self.ctx.clearRect(0, 0, self.cw, self.ch);
+                self.snows.forEach(function (snow) {
+                    snow.x += snow.cx;
+                    snow.y += snow.cy;
+                    //边界判断
+                    if(overGame(snow.x,snow.y,snow.width,snow.height,self.cw,self.ch)){snow.x = rand(0, self.cw);snow.y = rand(0, self.ch/4);snow.cx = rand(-1, 3);snow.cy = rand(1,3)}
+                    self.ctx.drawImage(img, snow.x, snow.y, snow.width, snow.height);
+                });
+            };
+            self.snowLoop();
+        };
+        // resize
+        window.onresize = function () {
+            self.canvas.width = self.cw = window.innerWidth;
+            self.canvas.height = self.ch = window.innerHeight;
+        };
+    }
+
+</script>
+<script>
+    SNOW({num:10})
+</script>
+</body>
+</html>

@@ -25,7 +25,7 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="563">
               <caret line="192" column="28" lean-forward="true" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
               <folding />
             </state>
@@ -86,6 +86,7 @@
         <option value="$PROJECT_DIR$/canvas特效/canvas烟花/js/index.js" />
         <option value="$PROJECT_DIR$/canvas特效/canvas雪花/index.html" />
         <option value="$PROJECT_DIR$/canvas特效/canvas烟花/test.html" />
+        <option value="$PROJECT_DIR$/canvas特效/canvas雪花/index2.html" />
       </list>
     </option>
   </component>
@@ -136,7 +137,14 @@
               <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
               <item name="canvas" type="462c0819:PsiDirectoryNode" />
               <item name="canvas特效" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas雪花" type="462c0819:PsiDirectoryNode" />
+              <item name="canvas烟花" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canvas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canvas" type="462c0819:PsiDirectoryNode" />
+              <item name="canvas特效" type="462c0819:PsiDirectoryNode" />
+              <item name="canvas烟花" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -154,6 +162,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\jlxuexi\canvas\canvas特效\canvas雪花" />
       <recent name="E:\jlxuexi\canvas\canvas特效\canvas烟花" />
       <recent name="E:\jlxuexi\canvas\canvas基础学习" />
     </key>
@@ -185,18 +194,17 @@
       <updated>1516676924343</updated>
       <workItem from="1516676950048" duration="3474000" />
       <workItem from="1516685410683" duration="40509000" />
-      <workItem from="1517122734786" duration="4284000" />
+      <workItem from="1517122734786" duration="5079000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60748000" />
+    <option name="totallyTimeSpent" value="61543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15911485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15911485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -227,13 +235,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/canvas基础学习/15.绘制文本.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="12" lean-forward="false" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/canvas基础学习/17.状态的保存和恢复.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -563,14 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1912">
@@ -579,17 +572,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/canvas特效/canvas雪花/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="138">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvas特效/canvas雪花/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="65" column="17" lean-forward="false" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/canvas特效/canvas烟花/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="563">
           <caret line="192" column="28" lean-forward="true" selection-start-line="192" selection-start-column="28" selection-end-line="192" selection-end-column="28" />
           <folding />
         </state>
